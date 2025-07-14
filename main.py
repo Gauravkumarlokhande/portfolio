@@ -22,7 +22,7 @@ yaml_file_path = current_file_dir/ "system_prompt.yaml"
 resolved_yaml_file_path = yaml_file_path.resolve()
 
 
-with open("/root/portfolio_chatbot/system_prompt.yaml", "r") as f:
+with open(resolved_yaml_file_path, "r") as f:
     prompt = yaml.safe_load(f)
 
 prompt = prompt["system_prompt"]
@@ -52,7 +52,7 @@ class Query(BaseModel):
 app = FastAPI()
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # You can specify your frontend URL here
+    allow_origins=["*"], 
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
