@@ -51,13 +51,7 @@ class Query(BaseModel):
 
 app = FastAPI()
 
-origins = [
-    "http://localhost:8080", 
-    "http://localhost:3000", 
-   
-    "https://data-dark-dashboard-site.vercel.app",
- 
-]
+origins = ["*"]
 
 app.add_middleware(
     CORSMiddleware,
